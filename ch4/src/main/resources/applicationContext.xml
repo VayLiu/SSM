@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 目标类 -->
+    <bean id="testDao" class="com.vayliu.dynamic.jdk.TestDaoImpl"></bean>
+    <!-- 切面类 -->
+    <bean id="myAspect" class="com.vayliu.aspect.MyAspect"></bean>
+
+</beans>

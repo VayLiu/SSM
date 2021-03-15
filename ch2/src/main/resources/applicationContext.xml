@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 将指定类 TestDIDao 配置给 Spring， 让 Spring 创建实例 -->
+    <bean id="testDIDao" class="com.vayliu.dao.TestDIDaoImpl"/>
+
+    <!-- 使用构造方法进行注入 -->
+    <bean id="testDIService" class="com.vayliu.service.TestDIServiceImpl">
+        <!-- 将 testDIDao 注入到 TestDIServiceImpl 类的属性 testDIDao 上 -->
+        <constructor-arg index="0" ref="testDIDao"/>
+    </bean>
+    <!-- 使用 setter 方法注入 -->
+    <bean id="testDIService1" class="com.vayliu.service.TestDIServiceImpl1">
+        <!-- 调用 TestDIServiceImpl1 类的 setter 方法，将 testDIDao 注入到 TestDIServiceImpl1 类的属性 TestDIDao 上 -->
+        <property name="testDIDao" ref="testDIDao"/>
+    </bean>
+
+</beans>
