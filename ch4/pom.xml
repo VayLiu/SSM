@@ -22,6 +22,17 @@
 
 
     <dependencies>
+        <!-- 导入AspectJ框架相关的Jar包 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>5.2.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.6</version>
+        </dependency>
     </dependencies>
 
 </project>
