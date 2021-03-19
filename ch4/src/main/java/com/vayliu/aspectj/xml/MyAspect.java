@@ -52,6 +52,9 @@ public class MyAspect {
         System.out.println("异常通知：程序执行异常" + e.getMessage());
     }
 
+    /**
+     * 后置（最终）通知
+     */
     public void after() {
         System.out.println("最终通知：模拟释放资源");
     }
