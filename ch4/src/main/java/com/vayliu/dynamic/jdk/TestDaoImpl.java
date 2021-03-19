@@ -1,12 +1,14 @@
 package com.vayliu.dynamic.jdk;
 
+import org.springframework.stereotype.Repository;
+
 /**
  * 接口实现类
  *
  * @author: VayLiu
  **/
 
-
+@Repository("testDao")
 public class TestDaoImpl implements TestDao{
 
     @Override
