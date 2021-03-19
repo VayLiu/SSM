@@ -1,4 +1,4 @@
-package com.vayliu.aspectj;
+package com.vayliu.aspectj.xml;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;

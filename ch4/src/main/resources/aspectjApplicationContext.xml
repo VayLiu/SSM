@@ -10,7 +10,7 @@
     <!-- 目标类 -->
     <bean id="testDao" class="com.vayliu.dynamic.jdk.TestDaoImpl"/>
     <!-- 定义切面 -->
-    <bean id="myAspect" class="com.vayliu.aspectj.MyAspect"/>
+    <bean id="myAspect" class="com.vayliu.aspectj.xml.MyAspect"/>
     <!-- 配置切面 -->
     <aop:config>
         <aop:aspect ref="myAspect">
