@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vayliu.ch7.dao.UserDao">
+
+    <!-- 查询所有数据 -->
+    <select id="selectAllUserByMap" resultType="com.vayliu.ch7.pojo.User" parameterType="map">
+        select * from t_user
+        where uname like concat('%', #{uname}, '%')
+        and usex = #{usex}
+    </select>
+
+    <!-- 使用 Java Bean  -->
+    <select id="selectAllUserByJavaBean" resultType="com.vayliu.ch7.pojo.User" parameterType="com.vayliu.ch7.pojo.User">
+        select * from t_user
+        where uname like concat('%', #{uname}, '%')
+        and usex = #{usex}
+    </select>
+
+    <!-- 使用 sql元素 查询元素 -->
+    <sql id="comColumns">uname, usex, account</sql>
+    <select id="selectAllUserByJavaBeanWithSql" resultType="com.vayliu.ch7.pojo.User" parameterType="com.vayliu.ch7.pojo.User">
+        select <include refid="comColumns"/> from t_user
+        where uname like concat('%', #{uname}, '%')
+        and usex = #{usex}
+    </select>
+
+    <!-- 使用 Map 存储结果集 -->
+    <select id="selectAllUserReturnMap" resultType="map">
+        select * from t_user
+    </select>
+
+    <!-- 使用 POJO 存储结果集 -->
+    <resultMap id="resultMapUser" type="com.vayliu.ch7.pojo.MapUser">
+        <id property="m_uid" column="uid"/>
+        <result property="m_uname" column="uname"/>
+        <result property="m_usex" column="usex"/>
+        <result property="m_account" column="account"/>
+    </resultMap>
+    <select id="selectAllUserByResultMap" resultMap="resultMapUser">
+        select * from t_user
+    </select>
+
+
+
+
+
+</mapper>
