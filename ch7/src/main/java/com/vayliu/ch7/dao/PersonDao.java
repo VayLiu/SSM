@@ -6,5 +6,7 @@ import java.util.List;
 
 @Mapper
 public interface PersonDao {
-    List<Person> selectPersonById(Integer param);
+    List<Person> selectPersonById1(Integer param);
+    List<Person> selectPersonById2(Integer param);
+    List<Person> selectPersonById3(Integer param);
 }

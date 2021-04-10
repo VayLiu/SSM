@@ -21,7 +21,9 @@ public class Test {
 //        userController.selectAllUserByResultMap();
 
         PersonController personController = (PersonController) applicationContext.getBean("personController");
-        personController.selectPersonById();
+        personController.selectPersonById1();
+        personController.selectPersonById2();
+        personController.selectPersonById3();
 
     }
 }

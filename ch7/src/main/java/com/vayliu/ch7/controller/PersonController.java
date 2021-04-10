@@ -17,8 +17,18 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    public void selectPersonById() {
-        List<Person> personList = personService.selectPersonById(1);
+    public void selectPersonById1() {
+        List<Person> personList = personService.selectPersonById1(1);
+        System.out.println(personList);
+    }
+
+    public void selectPersonById2() {
+        List<Person> personList = personService.selectPersonById2(1);
+        System.out.println(personList);
+    }
+
+    public void selectPersonById3() {
+        List<Person> personList = personService.selectPersonById3(1);
         System.out.println(personList);
     }
 

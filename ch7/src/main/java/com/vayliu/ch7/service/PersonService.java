@@ -18,7 +18,15 @@ public class PersonService {
     @Autowired
     private PersonDao personDao;
 
-    public List<Person> selectPersonById(Integer param) {
-        return personDao.selectPersonById(param);
+    public List<Person> selectPersonById1(Integer param) {
+        return personDao.selectPersonById1(param);
+    }
+
+    public List<Person> selectPersonById2(Integer param) {
+        return personDao.selectPersonById2(param);
+    }
+
+    public List<Person> selectPersonById3(Integer param) {
+        return personDao.selectPersonById2(param);
     }
 }
