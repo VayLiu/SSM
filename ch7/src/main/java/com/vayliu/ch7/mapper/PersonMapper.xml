@@ -33,7 +33,7 @@
     </select>
 
     <!-- 一对一 根据id查询个人信息：连接查询（使用POJO存储结果） -->
-    <select id="selectPersonById3" resultType="com.vayliu.ch7.pojo.Person" parameterType="Integer">
+    <select id="selectPersonById3" resultType="com.vayliu.ch7.pojo.SelectPersonById" parameterType="Integer">
         select person.*, idcard.code
         from person, idcard
         where person.idcard_id = idcard.id and person.id = #{id}

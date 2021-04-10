@@ -1,6 +1,7 @@
 package com.vayliu.ch7.controller;
 
 import com.vayliu.ch7.pojo.Person;
+import com.vayliu.ch7.pojo.SelectPersonById;
 import com.vayliu.ch7.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,7 +29,7 @@ public class PersonController {
     }
 
     public void selectPersonById3() {
-        List<Person> personList = personService.selectPersonById3(1);
+        List<SelectPersonById> personList = personService.selectPersonById3(1);
         System.out.println(personList);
     }
 
