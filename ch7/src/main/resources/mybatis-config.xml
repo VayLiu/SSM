@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+    <settings>
+        <!-- Log4j配置 -->
+        <setting name="logImpl" value="LOG4J"/>
+        <!-- 打开延迟加载的开关 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 将积极加载改为按需加载 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
     <mappers>
         <mapper resource="com/vayliu/ch7/mapper/UserMapper.xml"/>
         <mapper resource="com/vayliu/ch7/mapper/PersonMapper.xml"/>
