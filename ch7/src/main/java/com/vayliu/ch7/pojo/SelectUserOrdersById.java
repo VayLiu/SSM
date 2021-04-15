@@ -7,32 +7,14 @@ import java.util.List;
  **/
 
 
-public class User {
+public class SelectUserOrdersById {
 
     private Integer uid;
     private String uname;
     private String usex;
     private Double account;
-    
-    private List<Orders> ordersList;
-
-    public User() {
-    }
-
-    public User(Integer uid, String uname, String sex, Double account) {
-        this.uid = uid;
-        this.uname = uname;
-        this.usex = sex;
-        this.account = account;
-    }
-
-    public User(Integer uid, String uname, String usex, Double account, List<Orders> ordersList) {
-        this.uid = uid;
-        this.uname = uname;
-        this.usex = usex;
-        this.account = account;
-        this.ordersList = ordersList;
-    }
+    private Integer id;
+    private String ordersn;
 
     public Integer getUid() {
         return uid;
@@ -62,30 +44,35 @@ public class User {
         return account;
     }
 
-    public void setAccount(double account) {
-        this.account = account;
-    }
-
     public void setAccount(Double account) {
         this.account = account;
     }
 
-    public List<Orders> getOrdersList() {
-        return ordersList;
+    public Integer getId() {
+        return id;
     }
 
-    public void setOrdersList(List<Orders> ordersList) {
-        this.ordersList = ordersList;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getOrdersn() {
+        return ordersn;
+    }
+
+    public void setOrdersn(String ordersn) {
+        this.ordersn = ordersn;
     }
 
     @Override
     public String toString() {
-        return "User{" +
+        return "SelectUserOrdersById{" +
                 "uid=" + uid +
                 ", uname='" + uname + '\'' +
                 ", usex='" + usex + '\'' +
                 ", account=" + account +
-                ", ordersList=" + ordersList +
+                ", id=" + id +
+                ", ordersn='" + ordersn + '\'' +
                 '}';
     }
 }

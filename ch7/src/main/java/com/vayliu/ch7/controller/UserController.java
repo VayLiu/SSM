@@ -1,6 +1,7 @@
 package com.vayliu.ch7.controller;
 
 import com.vayliu.ch7.pojo.MapUser;
+import com.vayliu.ch7.pojo.SelectUserOrdersById;
 import com.vayliu.ch7.pojo.User;
 import com.vayliu.ch7.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,7 +59,20 @@ public class UserController {
         }
     }
 
+    public void selectUserOrdersById1() {
+        List<User> userList = userService.selectUserOrdersById1(1);
+        System.out.println(userList);
+    }
 
+    public void selectUserOrdersById2() {
+        List<User> userList = userService.selectUserOrdersById2(1);
+        System.out.println(userList);
+    }
+
+    public void selectUserOrdersById3() {
+        List<SelectUserOrdersById> userList = userService.selectUserOrdersById3(1);
+        System.out.println(userList);
+    }
 
 
 }

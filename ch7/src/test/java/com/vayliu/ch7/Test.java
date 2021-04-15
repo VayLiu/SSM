@@ -20,10 +20,16 @@ public class Test {
 //        userController.selectAllUserReturnMap();
 //        userController.selectAllUserByResultMap();
 
-        PersonController personController = (PersonController) applicationContext.getBean("personController");
-        personController.selectPersonById1();
-        personController.selectPersonById2();
-        personController.selectPersonById3();
+//        PersonController personController = (PersonController) applicationContext.getBean("personController");
+//        personController.selectPersonById1();
+//        personController.selectPersonById2();
+//        personController.selectPersonById3();
+
+        userController.selectUserOrdersById1();
+        System.out.println("================");
+        userController.selectUserOrdersById2();
+        System.out.println("================");
+        userController.selectUserOrdersById3();
 
     }
 }

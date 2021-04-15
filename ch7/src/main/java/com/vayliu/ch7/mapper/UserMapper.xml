@@ -41,8 +41,42 @@
         select * from t_user
     </select>
 
+    <!-- 一对多根据 uid 查询用户及其关联的订单信息：级联查询的第一种方法（嵌套查询） -->
+    <resultMap id="resultMapUserAndOrders1" type="com.vayliu.ch7.pojo.User">
+        <id property="uid" column="uid"/>
+        <result property="uname" column="uname"/>
+        <result property="usex" column="usex"/>
+        <result property="account" column="account"/>
+        <collection property="ordersList" ofType="com.vayliu.ch7.pojo.Orders" column="uid"
+                    select="com.vayliu.ch7.dao.OrdersDao.selectOrdersByUserId"/>
+    </resultMap>
+    <select id="selectUserOrdersById1" parameterType="Integer" resultMap="resultMapUserAndOrders1">
+        select * from t_user where uid = #{uid}
+    </select>
 
+    <!-- 一对多根据 uid 查询用户及其关联的订单信息：级联查询的第二种方法（嵌套结果） -->
+    <resultMap id="resultMapUserAndOrders2" type="com.vayliu.ch7.pojo.User">
+        <id property="uid" column="uid"/>
+        <result property="uname" column="uname"/>
+        <result property="usex" column="usex"/>
+        <result property="account" column="account"/>
+        <!-- 一对多级联查询，ofType 表示集合中的元素类型 -->
+        <collection property="ordersList" ofType="com.vayliu.ch7.pojo.Orders">
+            <id property="id" column="id"/>
+            <result property="ordersn" column="ordersn"/>
+        </collection>
+    </resultMap>
+    <select id="selectUserOrdersById2" parameterType="Integer" resultMap="resultMapUserAndOrders2">
+        select u.*, o.id, o.ordersn
+        from t_user u , t_orders o
+        where u.uid = o.user_id and u.uid=#{id}
+    </select>
 
-
+    <!-- 一对多根据 uid 查询用户及其关联的订单信息，连接查询（使用 POJO 存储结果） -->
+    <select id="selectUserOrdersById3" parameterType="Integer" resultType="com.vayliu.ch7.pojo.SelectUserOrdersById">
+        select u.*, o.id, o.ordersn
+        from t_user u , t_orders o
+        where u.uid = o.user_id and u.uid=#{id}
+    </select>
 
 </mapper>

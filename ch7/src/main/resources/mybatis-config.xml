@@ -15,5 +15,6 @@
         <mapper resource="com/vayliu/ch7/mapper/UserMapper.xml"/>
         <mapper resource="com/vayliu/ch7/mapper/PersonMapper.xml"/>
         <mapper resource="com/vayliu/ch7/mapper/IdcardMapper.xml"/>
+        <mapper resource="com/vayliu/ch7/mapper/OrdersMapper.xml"/>
     </mappers>
 </configuration>
