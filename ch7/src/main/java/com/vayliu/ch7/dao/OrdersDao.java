@@ -10,4 +10,6 @@ public interface OrdersDao {
 
     List<Orders> selectOrdersByUserId(Integer user_id);
 
+    List<Orders> selectAllOrdersAndProducts();
+
 }

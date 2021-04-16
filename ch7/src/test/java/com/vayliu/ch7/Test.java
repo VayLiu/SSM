@@ -1,5 +1,6 @@
 package com.vayliu.ch7;
 
+import com.vayliu.ch7.controller.OrdersController;
 import com.vayliu.ch7.controller.PersonController;
 import com.vayliu.ch7.controller.UserController;
 import org.springframework.context.ApplicationContext;
@@ -13,7 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Test {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        UserController userController = (UserController) applicationContext.getBean("userController");
+//        UserController userController = (UserController) applicationContext.getBean("userController");
 //        userController.selectAllByMap();
 //        userController.selectAllByJavaBean();
 //        userController.selectAllUserByJavaBeanWithSql();
@@ -25,11 +26,14 @@ public class Test {
 //        personController.selectPersonById2();
 //        personController.selectPersonById3();
 
-        userController.selectUserOrdersById1();
-        System.out.println("================");
-        userController.selectUserOrdersById2();
-        System.out.println("================");
-        userController.selectUserOrdersById3();
+//        userController.selectUserOrdersById1();
+//        System.out.println("================");
+//        userController.selectUserOrdersById2();
+//        System.out.println("================");
+//        userController.selectUserOrdersById3();
+
+        OrdersController ordersController = (OrdersController) applicationContext.getBean("ordersController");
+        ordersController.selectAllOrdersAndProducts();
 
     }
 }
