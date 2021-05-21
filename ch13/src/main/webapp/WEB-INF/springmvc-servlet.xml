@@ -20,6 +20,10 @@
 
     <mvc:interceptors>
         <bean class="com.vayliu.ch13.interceptor.TestInterceptor"/>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.vayliu.ch13.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
     </mvc:interceptors>
 
 </beans>
