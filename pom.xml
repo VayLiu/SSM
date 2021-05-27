@@ -19,6 +19,7 @@
         <module>ch13</module>
         <module>ch14</module>
         <module>ch14-JSR303</module>
+        <module>ch15</module>
     </modules>
 
     <groupId>com.vayliu</groupId>
